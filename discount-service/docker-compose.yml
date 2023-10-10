@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  product_postgres:
+    image: postgres
+    container_name: discount_postgres
+    read_only: true
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=user123
+      - POSTGRES_DB=discountDb
+    expose:
+      - "54323"
+    ports:
+      - "54323:54323"
+    tmpfs:
+      - /tmp
+      - /run
+      - /run/postgresql
+    volumes:
+      - discount-volume:/var/lib/postgresql/data
+    command: -p 54323
+
+volumes:
+  discount-volume:
