@@ -18,8 +18,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "external_id")
     private String externalId;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)

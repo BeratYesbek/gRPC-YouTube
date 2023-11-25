@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
-    Optional<Category> findByExternalId(String id);
+    Optional<Category> findByExternalId(String externalId);
 }
